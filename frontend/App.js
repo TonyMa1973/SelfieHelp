@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 
 function App() {
+    const [loggedIn, setLoggedIn] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // Handle login logic here
+        // Simulate successful login for demonstration purposes
+        setLoggedIn(true);
     };
 
     const handleGoogleAuth = () => {
@@ -17,6 +19,25 @@ function App() {
     const handleAppleAuth = () => {
         // Handle Apple authentication logic here
     };
+
+    if (loggedIn) {
+        return (
+            <div>
+                <h1>Dashboard</h1>
+                <div>
+                    <h2>Appointments for the Week</h2>
+                    <p>Calendar placeholder</p>
+                </div>
+                <div>
+                    <button>Take a Selfie</button>
+                </div>
+                <div>
+                    <h2>Trends</h2>
+                    <p>Graph placeholder with filter options</p>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div>
